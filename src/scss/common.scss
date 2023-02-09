@@ -1,0 +1,72 @@
+// Заголовки, общие БЄМ блоки и проче...
+.wrapper {
+   max-width: 1440px;
+   margin: 0 auto;
+}
+.title {
+   font-size: 18px;
+   font-weight: 700;
+   line-height: 120%;
+   letter-spacing: 5%;
+   text-align: center;
+   @media screen and (min-width: $mobile) {
+      font-size: 44px;
+   }
+
+}
+.button {
+   position: relative;
+   display: inline-block;
+   padding: 15px;
+   font-size: 13px;
+   font-weight: 500;
+   line-height: 130%;
+   letter-spacing: 5%;
+   color: $whiteColor;
+   background-color: $greenColor;
+   border-radius: 3px;
+   cursor: pointer;
+   &::after {
+      position: absolute;
+      content: url(../img/icons/arrowRight02.svg);
+      top: calc(50% - 7px);
+      right: 11px;
+      width: 21px;
+      height: 14px;
+      text-align: center;
+      @media screen and (min-width: $mobileSmall) {
+         content: url(../img/icons/arrowRight01.png);
+         top: calc(50% - 12px);
+         right: 24px;
+         width: 24px;
+         height: 24px;
+      }
+   }
+   @media screen and (min-width: $mobileSmall) {
+      font-size: 20px;
+   }
+}
+
+/*========= SCROLL UP ==========*/
+.scrollup {
+   position: fixed;
+   padding: 5px;
+   right: 20px;
+   bottom: -30%;
+   width: 20px;
+   height: 20px;
+   display: inline-flex;
+   background-color: rgba($blackColor, $alpha: 0.8);
+   font-size: 20px;
+   z-index: 1;
+   color: $whiteColor;
+   border: 1px solid $whiteColor;
+   transition: 0.3s;
+}
+.scrollup:hover {
+   transform: translateY(-5px);
+}
+/* Show Scroll Up */
+.show-scroll {
+   bottom: 20px;
+}

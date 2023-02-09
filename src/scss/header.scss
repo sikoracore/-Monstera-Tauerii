@@ -1,0 +1,127 @@
+.header {
+   padding: 44px 0px 28px 0px;
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   z-index: 100;
+   background-color: $whiteColor;
+   @media screen and (min-width: $mobileSmall) {
+      padding: 30px 0px;
+   }
+   @media screen and (min-width: $mobile) {
+      padding: 20px 0px;
+   }
+}
+.header__container {
+   display: flex;
+   align-items: center;
+}
+.nav {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   flex-grow: 1;
+   &__logo img {
+      width: 32px;
+      @media screen and (min-width: $mobileSmall) {
+         width: 48px;
+      }
+   }
+   &__menu {
+      position: fixed;
+      top: -100%;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      background-color:  rgba($greenColor, 0.4);
+      backdrop-filter: blur(32px);
+      transition: top 0.3s;
+      @media screen and (min-width: $mobile) {
+         position: static;
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         background-color:  $whiteColor;
+         // background-color:  transparent;
+      }
+   }
+   &__list {
+      margin-top: 100px;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+      flex-grow: 1;
+      @media screen and (min-width: $mobile) {
+         margin-top: 0px;
+         display: flex;
+         flex-direction: row;
+         gap: 40px;
+      }
+   }
+   &__item {
+      font-size: 30px;
+      line-height: 19px;
+      letter-spacing: 3%;
+      transition: color 0.3s;
+      &:hover {
+         color: $greenColor;
+      }
+      @media screen and (min-width: $mobile) {
+         font-size: 15px;
+      }
+   }
+   &__link {
+   }
+   &__info {
+      margin-top: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-grow: 0;
+      gap: 34px;
+   @media screen and (min-width: $mobile) {
+      margin-top: 0px;
+      display: flex;
+      gap: 24px;
+      }
+
+   }
+   &__user {
+      padding: 5px;
+      &:hover {
+         background-color: $greenColorLight;
+         border-radius: 50%;
+      }
+   }
+   &__cart {
+      padding: 5px;
+      &:hover {
+         background-color: $greenColorLight;
+         border-radius: 50%;
+      }
+   }
+   &__toggle {
+      display: block;
+      flex-grow: 0;
+      @media screen and (min-width: $mobile) {
+         display: none;
+      }
+   }
+   &__close {
+      position: absolute;
+		top: 38px;
+		right: 15px;
+      @media screen and (min-width: $mobile) {
+         display: none;
+      }
+   }
+}
+.show-menu {
+   top: 0;
+}
+.bg-header {
+   box-shadow: 0 4px 8px rgba($color: $greenColor, $alpha: 0.3);
+}
